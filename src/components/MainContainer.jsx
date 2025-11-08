@@ -18,10 +18,10 @@ const MainContainer = () => {
         <VideoBackground movieId={id} />
       </div>
 
-      {/* Left-to-right gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-transparent to-transparent z-10 pointer-events-none" />
+      {/* Left-to-right gradient (darker on left, lighter on right) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-transparent z-10 pointer-events-none" />
 
-      {/* Bottom-to-top gradient*/}
+      {/* Bottom-to-top gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black z-10 pointer-events-none" />
 
       {/* Title overlay */}
@@ -33,3 +33,7 @@ const MainContainer = () => {
 };
 
 export default MainContainer;
+
+
+
+

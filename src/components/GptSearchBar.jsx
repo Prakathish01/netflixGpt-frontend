@@ -23,11 +23,14 @@ Do NOT include markdown, code blocks, or extra text. Only return raw JSON.`;
 
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:4000/api/movies", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ prompt }),
-      });
+      const response = await fetch(
+        " https://netflixgpt-backend-production.up.railway.app/api/movies",
+        {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ prompt }),
+        }
+      );
 
       const json = await response.json();
 
@@ -57,18 +60,18 @@ Do NOT include markdown, code blocks, or extra text. Only return raw JSON.`;
         type="text"
         placeholder={lang[langKey].gptSearchPlaceholder}
         className="w-full sm:flex-1 px-4 py-3 rounded-lg sm:rounded-l-lg sm:rounded-r-none bg-black/70 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:border-red-600 text-sm sm:text-base"
-        onKeyDown={(e) => e.key === 'Enter' && handleGptSearchClick()}
+        onKeyDown={(e) => e.key === "Enter" && handleGptSearchClick()}
       />
       <button
         onClick={handleGptSearchClick}
         disabled={loading}
         className={`w-full sm:w-auto px-6 py-3 font-semibold rounded-lg sm:rounded-r-lg sm:rounded-l-none transition text-sm sm:text-base ${
           loading
-            ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
-            : 'bg-red-600 text-white hover:bg-red-700'
+            ? "bg-gray-600 text-gray-300 cursor-not-allowed"
+            : "bg-red-600 text-white hover:bg-red-700"
         }`}
       >
-        {loading ? 'Searching...' : lang[langKey].search}
+        {loading ? "Searching..." : lang[langKey].search}
       </button>
     </div>
   );

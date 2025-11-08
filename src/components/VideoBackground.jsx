@@ -11,7 +11,7 @@ const VideoBackground = ({ movieId }) => {
       {/* Background Trailer */}
       <iframe
         id="yt-player"
-        className="absolute top-1/2 left-1/2 w-[200%] sm:w-[130%] h-[200%] sm:h-[130%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+        className="absolute top-1/2 left-1/2 w-[200%] sm:w-[130%] h-[200%] sm:h-[130%] -translate-x-1/2 -translate-y-1/2 pointer-events-none object-cover"
         src={
           trailerVideo?.key
             ? `https://www.youtube.com/embed/${trailerVideo.key}?autoplay=1&mute=1&controls=0&loop=1&playlist=${trailerVideo.key}&modestbranding=1&rel=0&showinfo=0`
