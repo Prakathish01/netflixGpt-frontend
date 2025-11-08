@@ -117,7 +117,7 @@ const Login = () => {
               {error && <p className="text-red-500 text-sm">{error}</p>}
               <button
                 onClick={handleButtonClick}
-                className="w-full p-2 my-2 bg-red-600 text-white rounded cursor-pointer"
+                className="w-full p-2 my-2 bg-red-600  text-white rounded cursor-pointer"
               >
                 {isSignInForm ? "Sign In" : "Sign Up"}
               </button>

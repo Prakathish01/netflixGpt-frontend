@@ -9,7 +9,7 @@ const VideoTitle = ({ title, overview }) => {
       <p className="text-white text-md mt-4 line-clamp-3 max-w-md">{overview}</p>
 
       <div className="flex gap-4 mt-6">
-        <button className="flex items-center gap-2 bg-red-600 hover:bg-red-400 text-white cursor-pointer px-6 py-3 rounded-md font-bold text-md opacity-80  transition">
+        <button className="flex items-center  gap-2 bg-red-600 hover:bg-red-400 text-white cursor-pointer px-6 py-3 rounded-md font-bold text-md opacity-80  transition">
           <Play size={21} /> Play
         </button>
         <button className="flex items-center gap-2  bg-gray-700 cursor-pointer text-white px-6 py-3 rounded-md font-bold text-md opacity-80 hover:bg-gray-600 transition">

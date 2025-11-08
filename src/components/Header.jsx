@@ -71,7 +71,7 @@ const Header = () => {
           )}
 
           <button
-            className="bg-red-600 hover:bg-red-700 text-white font-semibold 
+            className="bg-red-600 hover:bg-red-700 text-white cursor-pointer font-semibold 
                    px-4 py-2 rounded transition duration-200 shadow-sm"
             onClick={handleGptSearchClick}
           >
@@ -80,7 +80,7 @@ const Header = () => {
 
           <button
             onClick={handleSignOut}
-            className="bg-black/50 hover:bg-black/70 text-white border border-gray-500 
+            className="bg-black/50 hover:bg-black/70 cursor-pointer text-white border border-gray-500 
                    px-4 py-2 rounded transition duration-200"
           >
             Sign Out
