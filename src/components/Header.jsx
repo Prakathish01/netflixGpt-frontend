@@ -45,24 +45,32 @@ const Header = () => {
 
   return (
     <div
-      className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black/90 via-black/60 to-transparent
-                flex items-center justify-between px-12 z-30"
+      className="absolute top-0 left-0 w-full h-16 sm:h-20 
+                 bg-gradient-to-b from-black/90 via-black/60 to-transparent
+                 flex items-center justify-between 
+                 px-4 sm:px-12 z-50 pointer-events-auto"
     >
-      <img className="w-32" src={NEtFLIX_LOGO} alt="netflix-logo" />
+      {/* Netflix Logo (Left) */}
+      <img
+        className="w-24 sm:w-32 object-contain"
+        src={NEtFLIX_LOGO}
+        alt="netflix-logo"
+      />
 
+      {/* Right-side buttons */}
       {user && (
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           {gptSearchView && (
             <select
-              className=" from-black/70 text-white px-3 py-2 rounded focus:outline-none
-              border-0 hover:bg-black/70 transition duration-200"
+              className="bg-black/70 text-white text-xs sm:text-sm px-2 sm:px-3 py-1.5 sm:py-2 rounded focus:outline-none
+                           border-gray-600 hover:bg-black/80 transition duration-200"
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGE.map((lang) => (
                 <option
                   key={lang.identifier}
                   value={lang.identifier}
-                  className="bg-black/70 border-0 text-white" 
+                  className="bg-black text-white"
                 >
                   {lang.name}
                 </option>
@@ -71,8 +79,8 @@ const Header = () => {
           )}
 
           <button
-            className="bg-red-600 hover:bg-red-700 text-white cursor-pointer font-semibold 
-                   px-4 py-2 rounded transition duration-200 shadow-sm"
+            className="bg-red-600 hover:bg-red-700 text-white font-semibold 
+                       px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm rounded transition duration-200 shadow-sm"
             onClick={handleGptSearchClick}
           >
             {gptSearchView ? "Home" : "GPT Search"}
@@ -80,15 +88,14 @@ const Header = () => {
 
           <button
             onClick={handleSignOut}
-            className="bg-black/50 hover:bg-black/70 cursor-pointer text-white border border-gray-500 
-                   px-4 py-2 rounded transition duration-200"
+            className="bg-black/50 hover:bg-black/70 text-white border border-gray-500 
+                       px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm rounded transition duration-200"
           >
             Sign Out
           </button>
 
-          {/* Profile */}
           <img
-            className="w-10 h-10 rounded object-cover"
+            className="w-8 sm:w-10 h-8 sm:h-10 rounded object-cover border border-gray-700"
             src={user.photoURL}
             alt="profile-logo"
           />

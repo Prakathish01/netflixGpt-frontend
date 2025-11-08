@@ -51,24 +51,24 @@ Do NOT include markdown, code blocks, or extra text. Only return raw JSON.`;
   };
 
   return (
-    <div className="w-full max-w-2xl flex">
+    <div className="w-full max-w-2xl flex flex-col sm:flex-row items-stretch gap-3 sm:gap-0 px-3 sm:px-0">
       <input
         ref={searchText}
         type="text"
         placeholder={lang[langKey].gptSearchPlaceholder}
-        className="flex-1 px-4 py-3 rounded-l-lg bg-black/70 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:border-red-600"
-        onKeyDown={(e) => e.key === "Enter" && handleGptSearchClick()}
+        className="w-full sm:flex-1 px-4 py-3 rounded-lg sm:rounded-l-lg sm:rounded-r-none bg-black/70 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:border-red-600 text-sm sm:text-base"
+        onKeyDown={(e) => e.key === 'Enter' && handleGptSearchClick()}
       />
       <button
         onClick={handleGptSearchClick}
         disabled={loading}
-        className={`px-6 py-3 font-semibold rounded-r-lg transition ${
+        className={`w-full sm:w-auto px-6 py-3 font-semibold rounded-lg sm:rounded-r-lg sm:rounded-l-none transition text-sm sm:text-base ${
           loading
-            ? "bg-gray-600 text-gray-300 cursor-not-allowed"
-            : "bg-red-600 text-white hover:bg-red-700"
+            ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
+            : 'bg-red-600 text-white hover:bg-red-700'
         }`}
       >
-        {loading ? "Searching..." : lang[langKey].search}
+        {loading ? 'Searching...' : lang[langKey].search}
       </button>
     </div>
   );

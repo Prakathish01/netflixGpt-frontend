@@ -79,7 +79,7 @@ const Login = () => {
     }
   };
   return (
-    <div className="relative w-screen h-screen">
+    <div className="relative w-screen h-screen overflow-hidden">
       <img
         className="w-full h-full object-cover"
         src={NETFLIX_BG_IMG}
@@ -88,9 +88,9 @@ const Login = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-gray-900/80"></div>
       <div className="absolute inset-0 z-10">
         <Header />
-        <form className="flex justify-center items-center h-full ">
-          <div className="h-4/6 w-2/5 bg-black/60 rounded-lg px-15 py-10">
-            <h1 className="text-white text-3xl font-sans font-bold pb-2.5">
+        <form className="flex justify-center items-center h-full px-4 sm:px-0">
+          <div className="w-full max-w-md sm:max-w-lg bg-black/60 rounded-lg px-6 sm:px-12 py-8 sm:py-10">
+            <h1 className="text-white text-2xl sm:text-3xl font-sans font-bold pb-3 text-center sm:text-left">
               {isSignInForm ? "Sign In" : "Sign Up"}
             </h1>
             <div>
@@ -99,34 +99,34 @@ const Login = () => {
                   ref={username}
                   type="text"
                   placeholder="Username"
-                  className="w-full p-2 my-2 bg-gray-800 text-white rounded"
+                  className="w-full p-3 my-2 bg-gray-800 text-white rounded text-sm sm:text-base"
                 />
               )}
               <input
                 ref={email}
                 type="email"
                 placeholder="Email"
-                className="w-full p-2 my-2 bg-gray-800 text-white rounded"
+                className="w-full p-3 my-2 bg-gray-800 text-white rounded text-sm sm:text-base"
               />
               <input
                 ref={password}
                 type="password"
                 placeholder="Password"
-                className="w-full p-2 my-2 bg-gray-800 text-white rounded"
+                className="w-full p-3 my-2 bg-gray-800 text-white rounded text-sm sm:text-base"
               />
               {error && <p className="text-red-500 text-sm">{error}</p>}
               <button
                 onClick={handleButtonClick}
-                className="w-full p-2 my-2 bg-red-600  text-white rounded cursor-pointer"
+                className="w-full p-3 my-3 bg-red-600 text-white rounded cursor-pointer text-sm sm:text-base hover:bg-red-700 transition"
               >
                 {isSignInForm ? "Sign In" : "Sign Up"}
               </button>
               {isSignInForm ? (
                 <>
-                  <h1 className="text-white text-center">
+                  <h1 className="text-white text-center text-sm sm:text-base">
                     New to Netflix?{" "}
                     <span
-                      className="text-blue-500 cursor-pointer"
+                      className="text-blue-500 cursor-pointer hover:underline"
                       onClick={toggleSignInform}
                     >
                       Sign up now
@@ -134,10 +134,10 @@ const Login = () => {
                   </h1>
                 </>
               ) : (
-                <h1 className="text-white text-center">
+                <h1 className="text-white text-center text-sm sm:text-base">
                   Already have account?{" "}
                   <span
-                    className="text-blue-500 cursor-pointer"
+                    className="text-blue-500 cursor-pointer hover:underline"
                     onClick={toggleSignInform}
                   >
                     Sign In now
@@ -145,10 +145,10 @@ const Login = () => {
                 </h1>
               )}
               {isSignInForm && (
-                <h1 className="hidden md:block text-white text-center mt-4 space-y-4">
+                <h1 className="hidden md:block text-white text-center mt-4 text-xs sm:text-sm">
                   This page is protected by Google reCAPTCHA to ensure you're
                   not a bot.{" "}
-                  <span className="text-blue-500 cursor-pointer">
+                  <span className="text-blue-500 cursor-pointer hover:underline">
                     Learn more
                   </span>
                 </h1>
