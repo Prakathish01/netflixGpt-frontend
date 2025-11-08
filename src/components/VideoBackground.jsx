@@ -7,18 +7,23 @@ const VideoBackground = ({ movieId }) => {
   useMovieTrailer(movieId);
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden">
+    <div className="relative w-screen h-screen overflow-hidden z-0">
       <iframe
         id="yt-player"
-        className="absolute top-1/2 left-1/2 w-[130%] h-[130%] -translate-x-1/2 -translate-y-1/2"
-        src={`https://www.youtube.com/embed/${trailerVideo?.key}?autoplay=1&mute=1&controls=0&loop=1&playlist=${trailerVideo?.key}&modestbranding=1&rel=0&showinfo=0`}
+        className="absolute top-1/2 left-1/2 z-0 w-[130%] h-[130%] -translate-x-1/2 -translate-y-1/2"
+        src={
+          trailerVideo?.key
+            ? `https://www.youtube.com/embed/${trailerVideo.key}?autoplay=1&mute=1&controls=0&loop=1&playlist=${trailerVideo.key}&modestbranding=1&rel=0&showinfo=0`
+            : ""
+        }
         title="YouTube trailer"
         frameBorder="0"
         allow="autoplay; fullscreen"
         allowFullScreen
       ></iframe>
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black"></div>
+
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black z-20"></div>
     </div>
   );
 };
