@@ -24,7 +24,7 @@ Do NOT include markdown, code blocks, or extra text. Only return raw JSON.`;
     try {
       setLoading(true);
       const response = await fetch(
-        " https://netflixgpt-backend-production.up.railway.app/api/movies",
+        " https://netflixgpt-backend-soxv.onrender.com/api/movies",
         {
           method: "POST",
           headers: { "content-type": "application/json" },
